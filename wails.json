@@ -1,0 +1,13 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "qso-graph-manager",
+  "outputfilename": "qso-graph-manager",
+  "frontend:install": "npm install",
+  "frontend:build": "npm run build",
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dev:serverUrl": "auto",
+  "author": {
+    "name": "ki7mt",
+    "email": "ki7mt@yahoo.com"
+  }
+}
