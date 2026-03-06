@@ -25,6 +25,14 @@ func Load() (*PersonaIndex, error) {
 	if idx.Personas == nil {
 		idx.Personas = make(map[string]Persona)
 	}
+	// Normalize map keys to lowercase — Python may write uppercase keys
+	for k, v := range idx.Personas {
+		lower := strings.ToLower(k)
+		if lower != k {
+			delete(idx.Personas, k)
+			idx.Personas[lower] = v
+		}
+	}
 	return &idx, nil
 }
 
